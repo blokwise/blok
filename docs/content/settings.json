@@ -1,0 +1,10 @@
+{
+  "title": "Dynamic components for storyblok blok schemes",
+  "url": "blok.blokwise.io",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "blokwise/blok",
+  "twitter": "@julianderungs"
+}
