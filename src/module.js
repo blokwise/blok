@@ -1,10 +1,13 @@
 import { join } from "path";
 import consola from "consola";
 
-export default async function blokModule({ prefix = '' } = {}) {
+export default async function blokModule({
+  prefix = "",
+  withConsole = false,
+} = {}) {
   const logger = consola.withScope("@blokwise/blok");
 
-  await this.requireModule('@blokwise/dynamic')
+  await this.requireModule("@blokwise/dynamic", { withConsole });
 
   this.nuxt.hook("components:dirs", (dirs) => {
     dirs.push({
@@ -14,11 +17,13 @@ export default async function blokModule({ prefix = '' } = {}) {
     });
   });
 
-  logger.success({
-    message: "blok component ready",
-    additional: `Module @blokwise/blok successfully initialized.\nReady to hydrate components based on storyblok blok schemes\n\nThis allows the developer to load components detected by @nuxt/components lazily as dynamic components.\nRead docs: https://blok.blokwise.io`,
-    badge: true,
-  });
+  if (withConsole) {
+    logger.success({
+      message: "blok component ready",
+      additional: `Module @blokwise/blok successfully registered.\nReady to auto import and hydrate components based on storyblok blok schemas\nRead docs: https://blok.blokwise.io`,
+      badge: true,
+    });
+  }
 
   return true;
 }
