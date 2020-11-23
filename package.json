@@ -1,11 +1,12 @@
 {
   "name": "@blokwise/blok",
   "version": "1.0.0",
-  "description": "Dynamically load components based on storyblok blok schemes in your nuxt.js project.",
+  "description": "Dynamically load components based on storyblok blok schemas in your nuxt.js project.",
   "repository": "blokwise/blok",
   "main": "src/module.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "jest",
+    "dev": "nuxt dev test/fixture"
   },
   "keywords": [
     "nuxtjs",
@@ -15,6 +16,13 @@
   "author": "Julian Derungs <julian.derungs@primesystems.ch>",
   "license": "MIT",
   "dependencies": {
-    "@blokwise/dynamic": "^1.0.1"
+    "@blokwise/dynamic": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "@nuxt/test-utils": "^0.0.1",
+    "jest": "^26.6.3",
+    "nuxt": "^2.14.7",
+    "playwright": "^1.6.2"
   }
 }

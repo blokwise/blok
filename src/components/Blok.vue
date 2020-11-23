@@ -2,6 +2,7 @@
   <NuxtDynamic
     :name="blok.component"
     v-bind="$attrs"
+    :blok="blok"
     class="blokwise__blok"
     v-on="$listeners"
   >
@@ -35,24 +36,20 @@
 </template>
 
 <script>
-// inspiration for slot handling:
-// https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
+/**
+ * Pass slots through from parent to child components: 
+ * https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
+ */
 export default {
   name: "Blok",
 
   props: {
+    // representing a storyblok schema
     blok: {
       type: Object,
       default: () => ({}),
     },
-    /**
-     * options: [
-     *   OnInteraction,
-     *   SsrOnly,
-     *   WhenIdle,
-     *   WhenVisible
-     * ]
-     */
+    // can be `OnInteraction`, `SsrOnly`, `WhenIdle`, `WhenVisible`
     hydration: {
       type: String,
       default: "WhenIdle",
@@ -61,7 +58,7 @@ export default {
 
   computed: {
     /**
-     * detect all properties of the blok which represent blok schemes as children
+     * detect all properties of the blok which represent blok schemas as children
      */
     children() {
       const isArray = (value) => Array.isArray(value) && value.length > 0;

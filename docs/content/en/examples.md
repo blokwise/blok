@@ -7,7 +7,7 @@ category: Guide
 
 ## Default usage
 
-Let's say you defined a scheme for a grid in storyblok. Let's say you want to fill the grid with logos - so you define an additional storyblok scheme for a logo. The blok object will look something like this:
+Let's say you defined a schema for a grid in storyblok. Let's say you want to fill the grid with logos - so you define an additional storyblok schema for a logo. The blok object will look something like this:
 
 ```json
 {
@@ -32,7 +32,7 @@ Let's say you defined a scheme for a grid in storyblok. Let's say you want to fi
 }
 ```
 
-We will use the `Blok` component inside `Parent.vue` to load the `Grid` and its components according to the scheme:
+We will use the `Blok` component inside `Parent.vue` to load the `Grid` and its components according to the schema:
 
 ```vue[Parent.vue]
 <template>
@@ -43,7 +43,7 @@ We will use the `Blok` component inside `Parent.vue` to load the `Grid` and its 
 export default {
   data() {
     return {
-      // this is one blok scheme
+      // this is one blok schema
       blok: {
         _uid: '10a9f451-4e30-47e1-ba7a-08d3ac8b3fbe',
         component: 'Grid',

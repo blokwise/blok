@@ -1,11 +1,11 @@
 ---
 title: Introduction
-description: 'Dynamic components based on storyblok blok schemes'
+description: 'Dynamic components based on storyblok blok schemas'
 position: 1
 category: ''
 features:
   - Enhance your DX for your Nuxt.js / Storyblok projects.
-  - Dynamically load components according to blok schemes
+  - Dynamically load components according to blok schemas
   - Recursively hydrate nested components
 ---
 
@@ -16,7 +16,7 @@ features:
 
 <alert type="success">
 
-Dynamically render storyblok blok schemes with ease.
+Dynamically render storyblok blok schemas with ease.
 
 </alert>
 
