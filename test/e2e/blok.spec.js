@@ -15,11 +15,10 @@ describe("Blok", () => {
     expect(html).toContain("Another bar hanging with the cool kids");
   });
 
-  // it("handles slots correctly", async () => {
-  //   const page = await createPage("/slots");
-  //   const html = await page.innerHTML("body");
+  it("handles scoped slotData correctly", async () => {
+    const page = await createPage("/");
+    const html = await page.innerHTML("body");
 
-  //   expect(html).toContain("<div>page</div>");
-  //   expect(html).toContain("<div>article</div>");
-  // });
+    expect(html).toContain("vue");
+  });
 });
