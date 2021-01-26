@@ -37,11 +37,13 @@
 
 <script>
 /**
- * Pass slots through from parent to child components: 
+ * Pass slots through from parent to child components:
  * https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
  */
 export default {
   name: "Blok",
+
+  inheritAttrs: false,
 
   props: {
     // representing a storyblok schema
