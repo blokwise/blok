@@ -867,10 +867,10 @@
   resolved "https://npm.primesystems.ch/@bcoe%2fv8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blokwise/dynamic@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@blokwise/dynamic/-/dynamic-1.0.5.tgz#6c406ba12661c374b7df930d8b097552c27393c1"
-  integrity sha512-S3VfnWteRuvPhZvs1tXc2fEeu8eneEhc+rfLuy6hc5k5/8SJiq/+ruje5kjTmhhGfAiNZ/eBH1/JnvrM3LYkxw==
+"@blokwise/dynamic@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@blokwise/dynamic/-/dynamic-1.1.0.tgz#13d0fae635605202c774f7b5095bbc3cdacbc6dd"
+  integrity sha512-ZhvYFXBuw/GFUay1c/wtiC1IBeq1XC21GmvoVp7JHWTcizDK69tBA+AyJDhBrlx62l2EtFGASBGxFBZd0eWR0A==
   dependencies:
     consola "^2.15.0"
     vue-lazy-hydration "1.0.0-beta.14"

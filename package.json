@@ -16,7 +16,7 @@
   "author": "Julian Derungs <julian.derungs@primesystems.ch>",
   "license": "MIT",
   "dependencies": {
-    "@blokwise/dynamic": "^1.0.5"
+    "@blokwise/dynamic": "^1.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.7",
