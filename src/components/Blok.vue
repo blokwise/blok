@@ -3,7 +3,6 @@
     :name="blok.component"
     v-bind="$attrs"
     :blok="blok"
-    class="blokwise__blok"
     v-on="$listeners"
   >
     <!-- pass through blok slots -->
