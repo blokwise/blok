@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "Dynamically load components based on storyblok blok schemas in your nuxt.js project.",
   "repository": "blokwise/blok",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
+  },
   "main": "src/module.js",
   "scripts": {
     "test": "jest",
