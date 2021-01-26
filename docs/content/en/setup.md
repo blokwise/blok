@@ -39,7 +39,7 @@ Then, add `@blokwise/blok` to the `modules` section of `nuxt.config.js`:
   modules: [
     [
       "@blokwise/blok",
-      { prefix: "blokwise" }
+      { prefix: "awesome" }
     ]
   ];
 }

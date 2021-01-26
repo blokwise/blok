@@ -36,7 +36,7 @@ We will use the `Blok` component inside `Parent.vue` to load the `Grid` and its 
 
 ```vue[Parent.vue]
 <template>
-  <Blok :blok="blok">
+  <Blok :blok="blok" />
 </template>
 
 <script>
@@ -72,7 +72,7 @@ Let's say the `Grid` component will look something like this:
 ```vue[Grid.vue]
 <template>
   <div class="grid">
-    <slot name="logos">
+    <slot name="logos" />
   </div>
 </template>
 
@@ -125,7 +125,7 @@ It's possible to use scoped slots in components which are loaded through `Blok`.
 ```vue[Grid.vue]
 <template>
   <div class="grid">
-    <slot name="logos" width="320">
+    <slot name="logos" width="320" />
   </div>
 </template>
 

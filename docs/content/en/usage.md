@@ -15,7 +15,7 @@ Use the `Blok` component to load components according to storyblok schemas:
 
 ```vue
 <template>
-  <Blok :blok="blok">
+  <Blok :blok="blok" />
 </template>
 
 <script>
@@ -24,15 +24,15 @@ export default {
     return {
       // this is one blok schema
       blok: {
-        _uid: '10a9f451-4e30-47e1-ba7a-08d3ac8b3fbe',
-        component: 'Logo',
+        _uid: "10a9f451-4e30-47e1-ba7a-08d3ac8b3fbe",
+        component: "Logo",
         image: {
-          filename: 'logo.svg'
+          filename: "logo.svg",
         },
-      }
-    }
-  }
-}
+      },
+    };
+  },
+};
 </script>
 ```
 
