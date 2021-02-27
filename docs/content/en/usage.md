@@ -52,6 +52,6 @@ Every property of the `blok` Object will be searched for possible child blok sch
 
 - type: `String`,
 - default: `'WhenIdle'`
-- options: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'SsrOnly'`
+- options: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'Never'`
 
 The `hydration` prop controls how to the component will be hydrated. The hydration will be done with `vue-lazy-hydration` thanks to Markus Oberlehner.

@@ -50,7 +50,7 @@ export default {
       type: Object,
       default: () => ({}),
     },
-    // can be `OnInteraction`, `SsrOnly`, `WhenIdle`, `WhenVisible`
+    // can be `OnInteraction`, `Never`, `WhenIdle`, `WhenVisible`
     hydration: {
       type: String,
       default: "WhenIdle",
