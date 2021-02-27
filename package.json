@@ -1,6 +1,6 @@
 {
   "name": "@blokwise/blok",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Dynamically load components based on storyblok blok schemas in your nuxt.js project.",
   "repository": "blokwise/blok",
   "publishConfig": {
