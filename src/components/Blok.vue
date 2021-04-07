@@ -1,5 +1,7 @@
 <template>
   <NuxtDynamic
+    v-if="hasEditableDirective"
+    v-editable="blok"
     :name="blok.component"
     v-bind="$attrs"
     :blok="blok"
@@ -15,6 +17,43 @@
         v-bind="slotData"
         :key="child._uid"
         :blok="child"
+        :is-editable="isEditable"
+        :hydration="hydration"
+      />
+    </template>
+
+    <!-- pass through normal slots -->
+    <template v-for="(_, slotName) in $slots" v-slot:[slotName]>
+      <slot :name="slotName" />
+    </template>
+
+    <!-- pass through scoped slots -->
+    <template
+      v-for="(_, scopedSlotName) in $scopedSlots"
+      v-slot:[scopedSlotName]="slotData"
+    >
+      <slot :name="scopedSlotName" v-bind="slotData" />
+    </template>
+  </NuxtDynamic>
+  
+  <NuxtDynamic
+    v-else
+    :name="blok.component"
+    v-bind="$attrs"
+    :blok="blok"
+    v-on="$listeners"
+  >
+    <!-- pass through blok slots -->
+    <template
+      v-for="(group, propName) in children"
+      v-slot:[propName]="slotData"
+    >
+      <Blok
+        v-for="child in group"
+        v-bind="slotData"
+        :key="child._uid"
+        :blok="child"
+        :is-editable="isEditable"
         :hydration="hydration"
       />
     </template>
@@ -55,6 +94,11 @@ export default {
       type: String,
       default: "WhenIdle",
     },
+    // use v-editable directive on elements for storyblok live editing
+    isEditable: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -71,6 +115,15 @@ export default {
             isArray(value) && isObject(value[0]) && isBlok(value[0])
         )
       );
+    },
+
+    /**
+     * decide whether to use custom v-editable directive of storyblok-nuxt module or not
+     * either enable through prop `isEditable` of the Blok component globally for all rendered Bloks down the tree
+     * or as prop of the blok data `blok.isEditable` inside the blok data for single opt-ins.
+     */
+    hasEditableDirective() {
+      return this.isEditable ?? !!this.blok.isEditable;
     },
   },
 };

@@ -15,7 +15,7 @@ Use the `Blok` component to load components according to storyblok schemas:
 
 ```vue
 <template>
-  <Blok :blok="blok" />
+  <Blok :blok="blok" :is-editable="true" />
 </template>
 
 <script>
@@ -55,3 +55,10 @@ Every property of the `blok` Object will be searched for possible child blok sch
 - options: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'Never'`
 
 The `hydration` prop controls how to the component will be hydrated. The hydration will be done with `vue-lazy-hydration` thanks to Markus Oberlehner.
+
+### `isEditable`
+
+- type: `Boolean`,
+- default: `false`
+
+Decide whether to use custom v-editable directive of storyblok-nuxt module or not. Either enable through prop `isEditable` of the Blok component globally for all rendered Bloks down the tree or as prop of the blok data `blok.isEditable` inside the blok data for single opt-ins.
