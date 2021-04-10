@@ -3,8 +3,7 @@
     v-if="hasEditableDirective"
     v-editable="blok"
     :name="blok.component"
-    v-bind="$attrs"
-    :blok="blok"
+    v-bind="attrs"
     v-on="$listeners"
   >
     <!-- pass through blok slots -->
@@ -19,6 +18,7 @@
         :blok="child"
         :is-editable="isEditable"
         :hydration="hydration"
+        :spread-props="spreadProps"
       />
     </template>
 
@@ -35,14 +35,8 @@
       <slot :name="scopedSlotName" v-bind="slotData" />
     </template>
   </NuxtDynamic>
-  
-  <NuxtDynamic
-    v-else
-    :name="blok.component"
-    v-bind="$attrs"
-    :blok="blok"
-    v-on="$listeners"
-  >
+
+  <NuxtDynamic v-else :name="blok.component" v-bind="attrs" v-on="$listeners">
     <!-- pass through blok slots -->
     <template
       v-for="(group, propName) in children"
@@ -55,6 +49,7 @@
         :blok="child"
         :is-editable="isEditable"
         :hydration="hydration"
+        :spread-props="spreadProps"
       />
     </template>
 
@@ -99,6 +94,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // spread blok properties as props to component
+    spreadProps: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -124,6 +124,23 @@ export default {
      */
     hasEditableDirective() {
       return this.isEditable ?? !!this.blok.isEditable;
+    },
+
+    /**
+     * spread the properties of the blok object onto the loaded component
+     * instead of passing the blok object as is
+     */
+    attrs() {
+      if (this.spreadProps) {
+        return {
+          ...this.$attrs,
+          ...this.blok,
+        };
+      }
+      return {
+        ...this.$attrs,
+        blok: this.blok,
+      };
     },
   },
 };

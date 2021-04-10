@@ -62,3 +62,19 @@ The `hydration` prop controls how to the component will be hydrated. The hydrati
 - default: `false`
 
 Decide whether to use custom v-editable directive of storyblok-nuxt module or not. Either enable through prop `isEditable` of the Blok component globally for all rendered Bloks down the tree or as prop of the blok data `blok.isEditable` inside the blok data for single opt-ins.
+
+### `spreadProps`
+
+- type: `Boolean`,
+- default: `false`
+
+Decide whether to spread the proberties of the blok object onto the loaded component or not. If you spread the components e.g. the blok object looks like this:
+
+```js
+const blok = {
+  foo: 123,
+  bar: "john doe",
+};
+```
+
+`foo` and `bar` gets passed to the component as props `foo` and `bar`. If you decide to not spread the props (which is the default), then the whole object gets passed to the component as `blok` prop.
