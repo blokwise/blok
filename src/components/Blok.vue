@@ -2,7 +2,7 @@
   <NuxtDynamic
     v-if="hasEditableDirective"
     v-editable="blok"
-    :name="blok.component"
+    :component="blok.component"
     v-bind="attrs"
     v-on="$listeners"
   >
@@ -36,7 +36,12 @@
     </template>
   </NuxtDynamic>
 
-  <NuxtDynamic v-else :name="blok.component" v-bind="attrs" v-on="$listeners">
+  <NuxtDynamic
+    v-else
+    :component="blok.component"
+    v-bind="attrs"
+    v-on="$listeners"
+  >
     <!-- pass through blok slots -->
     <template
       v-for="(group, propName) in children"
