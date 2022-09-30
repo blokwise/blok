@@ -1,6 +1,6 @@
 {
   "name": "@blokwise/blok",
-  "version": "2.0.0-1",
+  "version": "2.0.0-2",
   "description": "Dynamically load components based on storyblok blok schemas in your nuxt.js project.",
   "author": "Julian Derungs <julian.derungs@deepbase.ch>",
   "license": "MIT",
