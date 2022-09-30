@@ -67,6 +67,8 @@
 </template>
 
 <script setup>
+import { computed, useAttrs } from '#imports'
+
 // TODO: add v-editable
 const props = defineProps({
   /*

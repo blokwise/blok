@@ -31,6 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
     // transpile runtime
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
+    nuxt.options.build.transpile.push('@blokwise/blok')
 
     // add blokwise blok components
     nuxt.hook('components:dirs', (dirs) => {
